@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Source Code Pro", monospace;
 }
 
 .navbar {
@@ -27,24 +28,169 @@
     letter-spacing: 1px;
 }
 
-.logo {
-    margin-top: 20px;
+
+.parallax-container {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%), url(./images/background.webp);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    background-attachment: fixed;
+    text-align: center;
+    color: white;
+    padding-bottom: 60px;
+    text-shadow: rgba(0, 0, 0, 0.2);
+}
+
+.parallax-container h1 {
+    font-family: "Cinzel", serif;
+    font-size: 60px;
+    font-weight: 200;
+}
+
+.parallax-container h3 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.parallax-container button {
+    border: none;
+    padding: 20px 42px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-family: "Source Sans 3", sans-serif;
+}
+
+.realtor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #161616;
+    color: #FFFFFF;
+    padding: 100px;
+}
+
+.realtor h1 {
+    padding-top: 40px;
+    font-family: "Cinzel", serif;
+    font-weight: 200;
+}
+
+.realtor h2 {
+    font-family: "Cinzel", serif;
+    font-size: 28px;
+    font-weight: 200;
+    padding-bottom: 40px;
+}
+
+.realtor h3 {
+    font-weight: 500;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.realtor-img {
+    border-radius: 50%;
+}
+
+.page-details {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    font-family: "Arial", sans-serif;
+}
+
+.header {
+    font-family: "Cinzel", serif;
+    font-weight: 200;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 36px;
+    margin-bottom: 80px;
+}
+
+.details-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 120px;
+}
+
+.details-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sub-header {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.details {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    max-width: 500px;
+}
+
+.logos{
+    display: flex;
+    padding: 120px;
+    justify-content: space-between;
+}
+
+.services{
+    padding: 80px;
+    text-align: center;
+}
+
+.service-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+
+}
+.service img{
+    border-radius: 50%;
+    padding-bottom: 20px;
+}
+
+.header-services{
+    font-family: "Cinzel", serif;
+    font-weight: 200;
+    text-align: center;
+    letter-spacing: 3px;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.details-service{
+    font-size: 16px;
+    line-height: 1.4;
+    color: #555;
+    max-width: 44ch;
 }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+.contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 .form-container {
     width: 420px;
@@ -115,4 +261,38 @@ button:hover {
 .captcha-text a {
     color: #666;
     text-decoration: underline;
+}
+
+footer{
+    background: #000000;
+    color: #E2E2E2;
+    padding: 60px;
+}
+
+.logo-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.copyright{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: 100;
+    font-size: 14px;
+    color: #8D8A8D;
+}
+
+.godaddy{
+    text-align: center;
+}
+
+.godaddy p{
+    padding-top: 20px;
+    padding-bottom: 12px;
+    font-weight: 100;
+    font-size: 14px;
+    color: #8D8A8D;
 }
