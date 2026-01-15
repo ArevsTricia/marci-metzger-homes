@@ -27,6 +27,30 @@
     color: black;
     font-family: "Cinzel", serif;
     font-weight: 600;
+    padding: 10px 20px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #a08968;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #a08968;
+    text-decoration: none;
 }
 
 
@@ -67,6 +91,10 @@
     font-weight: 700;
     letter-spacing: 1px;
     font-family: "Source Sans 3", sans-serif;
+}
+
+.parallax-container button:hover {
+    cursor: pointer;
 }
 
 .realtor {
@@ -116,6 +144,7 @@
     letter-spacing: 3px;
     font-size: 36px;
     margin-bottom: 80px;
+    color: #a08968;
 }
 
 .details-container {
@@ -159,7 +188,6 @@
 
 .service-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     gap: 40px;
 
@@ -167,16 +195,20 @@
 
 .service img {
     border-radius: 50%;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
 }
 
 .header-services {
     font-family: "Cinzel", serif;
-    font-weight: 200;
+    font-weight: 400;
     text-align: center;
     letter-spacing: 3px;
     font-size: 32px;
     margin-bottom: 40px;
+    color: #a08968;
 }
 
 .details-service {
@@ -219,7 +251,7 @@
 .container h1 {
     text-align: center;
     font-family: "Cinzel", serif;
-    font-weight: 200;
+    font-weight: 400;
     color: #a08968;
     font-size: 32px;
     letter-spacing: 2px;
@@ -246,11 +278,9 @@
     flex-direction: column;
 }
 
-label {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 8px;
-    font-weight: 500;
+.email {
+    margin-top: 18px;
+    margin-bottom: 18px;
 }
 
 select,
@@ -265,13 +295,14 @@ input {
     transition: border-color 0.3s;
 }
 
-select:hover,
+.form-group select:hover,
 input:hover {
     border-color: #a08968;
+    cursor: pointer;
 }
 
 select:focus,
-input:focus {
+input:focus textarea:focus {
     outline: none;
     border-color: #a08968;
 }
@@ -327,15 +358,12 @@ input[type="number"] {
 
 .carousel-inner {
     height: 100%;
-    border-radius: 20px;
 }
 
 .carousel,
 .slide {
-    height: 600px;
-}
-
-.carousel-inner img {
+    max-height: 600px;
+    overflow: hidden;
     border-radius: 20px;
 }
 
@@ -368,21 +396,23 @@ input[type="number"] {
 
 .header-contact {
     font-family: "Cinzel", serif;
-    font-weight: 200;
+    font-weight: 400;
     text-align: center;
     letter-spacing: 3px;
     font-size: 36px;
     margin-bottom: 32px;
+    color: #a08968;
 }
 
 .office-container {
-    width: 420px;
     margin: 50px auto;
 }
 
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 20px;
 }
 
 .location {
@@ -399,6 +429,10 @@ input[type="number"] {
     font-weight: 400;
     color: #333;
     margin-bottom: 25px;
+}
+
+.message-form input:hover {
+    cursor: text;
 }
 
 .hours-toggle {
@@ -501,9 +535,45 @@ input[type="number"] {
     line-height: 1.5;
 }
 
+.contact-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-button-green {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 48px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+    margin-top: 20px;
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+}
+
+.whatsapp-button-green:hover {
+    background-color: #20BA5A;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+    text-decoration: none;
+    color: white;
+}
 
 .form-container {
-    width: 420px;
     margin: 50px auto;
 }
 
@@ -530,6 +600,7 @@ textarea {
     padding: 8px 0;
     font-size: 14px;
     outline: none;
+    margin-top: 12px;
 }
 
 textarea {
@@ -550,16 +621,24 @@ textarea:focus {
 .form-container button {
     display: block;
     margin: 30px auto;
-    padding: 12px 40px;
+    padding: 15px 100px;
+    background-color: #E2E2E2;
+    color: #161616;
     border: none;
-    border-radius: 25px;
-    background: #e0e0e0;
-    font-weight: bold;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
     cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 button:hover {
-    background: #d5d5d5;
+    background-color: #a08968;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .captcha-text {
@@ -612,4 +691,33 @@ hr {
     color: #8D8A8D;
     margin: 0 auto;
     border-top: 1px solid !important;
+}
+
+@media (max-width:769px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .form-container,
+    .office-container {
+        margin: 0;
+    }
+
+    .service-container {
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .service img {
+        max-width: 300px;
+    }
+
+    .details-service{
+        max-width: none;
+    }
+
+    .form-row{
+        flex-direction: column;
+    }
 }
