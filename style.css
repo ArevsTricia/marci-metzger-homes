@@ -53,8 +53,81 @@
     text-decoration: none;
 }
 
-.logo img{
+.logo img {
     width: 100%;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.hamburger.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding: 80px 30px 30px;
+    overflow-y: auto;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-close {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.sidebar .nav-links {
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.sidebar .nav-links li {
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar .nav-links a {
+    display: block;
+    padding: 18px 0;
+    font-size: 16px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 
@@ -108,7 +181,7 @@
     flex-direction: column;
     background: #161616;
     color: #FFFFFF;
-    padding: 100px;
+    padding: 100px 60px;
 }
 
 .realtor h1 {
@@ -139,7 +212,7 @@
 .page-details {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 80px 60px;
     font-family: "Arial", sans-serif;
 }
 
@@ -159,7 +232,7 @@
     align-items: center;
     gap: 60px;
     margin-bottom: 120px;
-    
+
 }
 
 .details-container img {
@@ -190,10 +263,10 @@
     gap: 40px;
 }
 
-.logos img{
+.logos img {
     width: 100%;
     max-width: 100px;
-    
+
 }
 
 .services {
@@ -214,6 +287,7 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    max-width: 300px;
 }
 
 .header-services {
@@ -358,7 +432,7 @@ input[type="number"] {
 }
 
 .photo-gallery {
-    padding: 100px;
+    padding: 100px 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -408,7 +482,7 @@ input[type="number"] {
 }
 
 .contact {
-    padding: 80px;
+    padding: 80px 60px;
 }
 
 .header-contact {
@@ -711,6 +785,32 @@ hr {
 }
 
 @media (max-width:769px) {
+    .navbar .nav-links {
+        display: none;
+    }
+
+    .nav-links a::after {
+        background-color: white;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        bottom: 40px;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo{
+        padding: 40px 20px 0px 20px;
+    }
+
     .contact-container {
         grid-template-columns: 1fr;
         gap: 60px;
@@ -730,43 +830,131 @@ hr {
         max-width: 300px;
     }
 
-    .details-service{
+    .details-service {
         max-width: none;
     }
 
-    .form-row{
+    .form-row {
         flex-direction: column;
     }
 
-    .search-listings{
-        height: 150vh;
+    .search-listings {
+        height: 100%;
+        padding: 40px;
     }
 
-    .details-container{
+    .details-container {
         text-align: center;
         display: flex;
         flex-direction: column;
         align-items: unset;
     }
 
-    .details{
+    .details {
         max-width: none;
     }
 
-    .page-details{
+    .page-details {
         padding: 80px 60px;
     }
 
-    .order{
+    .order {
         order: 2;
     }
 
-    .form-grid{
+    .form-grid {
         grid-template-columns: 1fr;
         gap: 0;
     }
 
-    .logos{
+    .logos {
         padding: 120px 60px;
+    }
+}
+
+@media (max-width:426px) {
+    .parallax-container h1{
+        font-size: 48px;
+    }
+
+    .parallax-container h3{
+        font-size: 16px;
+    }
+
+    .parallax-container button{
+        padding: 16px 42px;
+    }
+
+    .realtor-img{
+        width: 100%;
+    }
+
+    .socials {
+        padding: 40px;
+    }
+
+    .search-listings {
+        height: 100%;
+        padding: 20px;
+    }
+
+    .logos {
+        padding: 28px;
+    }
+
+    .photo-gallery h1 {
+        text-align: center;
+        font-size: 32px;
+    }
+
+    .photo-gallery {
+        padding: 80px 20px;
+    }
+
+    .whatsapp-button-green {
+        font-size: 14px;
+        padding: 14px;
+    }
+
+    .contact {
+        padding: 80px 20px;
+    }
+
+    .location {
+        text-align: center;
+    }
+
+    .hours h2,
+    .note {
+        text-align: center;
+    }
+
+    .form-container h2 {
+        text-align: center;
+    }
+
+    .header-services {
+        font-size: 32px;
+    }
+
+    .services {
+        padding: 80px 40px;
+    }
+
+    .search-container {
+        padding: 20px;
+    }
+
+    .search-container h1 {
+        font-size: 28px;
+    }
+
+    .page-details {
+        padding: 40px;
+
+    }
+
+    .details-container {
+        margin-bottom: 100px;
     }
 }

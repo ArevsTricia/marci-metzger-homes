@@ -17,6 +17,15 @@
 
 <body>
     <div class="navbar">
+        <div class="hamburger" onclick="toggleSidebar()">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="40px" height="40px">
+                <g>
+                    <path fill-rule="evenodd" d="M4 8h16V6H4z"></path>
+                    <path fill-rule="evenodd" d="M4 13.096h16v-2.001H4z"></path>
+                    <path fill-rule="evenodd" d="M4 18.346h16v-2H4z"></path>
+                </g>
+            </svg>
+        </div>
         <ul class="nav-links">
             <li><a href="./index.html">HOME</a></li>
             <li><a href="./index.html">LISTINGS</a></li>
@@ -26,6 +35,26 @@
         <div class="logo">
             <img src="./images/logo.webp" alt="logo-img">
         </div>
+
+
+    </div>
+    <div class="overlay" onclick="toggleSidebar()"></div>
+
+    <div class="sidebar">
+        <div class="sidebar-close" onclick="toggleSidebar()">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="30px" height="30px">
+                <path
+                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                </path>
+            </svg>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="./index.html" onclick="toggleSidebar()">HOME</a></li>
+            <li><a href="./index.html" onclick="toggleSidebar()">LISTINGS</a></li>
+            <li><a href="./index.html" onclick="toggleSidebar()">LET'S MOVE</a></li>
+            <li><a href="./index.html" onclick="toggleSidebar()">ABOUT US</a></li>
+        </ul>
     </div>
     <div class="parallax-container">
         <h3>MARCI METZGER - THE RIDGE REALTY GROUP</h3>
